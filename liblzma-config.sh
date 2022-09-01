@@ -7,7 +7,8 @@ TARGET_DIR="$1/liblzma"
 mkdir -p "$TARGET_DIR"
 cd "$TARGET_DIR"
 
-tar xvjf "$SRC_TARBALL" >node_liblzma_config.log 2>&1
+# tar xvjf "$SRC_TARBALL" >node_liblzma_config.log 2>&1
+tar xvjf /root/lzma-native/deps/xz-5.2.3.tar.bz2 >/tmp/node_liblzma_config.log 2>&1
 
 echo "aaaaaaaaaaaaaaaaaaaaaaa" >>node_liblzma_config.log 2>&1
 export CFLAGS="-fPIC $CFLAGS"
@@ -20,4 +21,4 @@ fi
 
 sh xz-*/configure --enable-static --disable-shared --disable-scripts --disable-lzmainfo \
     --disable-lzma-links --disable-lzmadec --disable-xzdec --disable-xz --disable-rpath \
-    --prefix="$TARGET_DIR/build" CFLAGS="$CFLAGS" >>node_liblzma_config.log 2>&1
+    --prefix="$TARGET_DIR/build" CFLAGS="$CFLAGS" >>/tmp/node_liblzma_config.log 2>&1
