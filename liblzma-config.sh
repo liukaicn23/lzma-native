@@ -9,6 +9,7 @@ cd "$TARGET_DIR"
 
 tar xvjf "$SRC_TARBALL" >node_liblzma_config.log 2>&1
 
+echo "aaaaaaaaaaaaaaaaaaaaaaa"
 export CFLAGS="-fPIC $CFLAGS"
 
 # Fix build on Apple Silicon
